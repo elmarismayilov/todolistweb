@@ -1,0 +1,8 @@
+{% extends 'todolist/base.html'%}
+
+{% block title%}Task {{task.id}}{% endblock%}
+{% block content%}
+    <h1>{{task.title}}</h1>
+    <p>{{task.description}}</p>
+    <p>Date added: {{ task.date_added|date:"F j, Y, g:i a" }}</p>
+{% endblock %}

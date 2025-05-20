@@ -1,0 +1,16 @@
+{% extends 'todolist/base.html' %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+    <p>Tasks</p>
+
+    <ul>
+        {% for task in tasks%}
+        <li><a href="{% url 'single_task' task.id %}">{{task}}</a></li>
+        <a href="{% url 'edit_task' task.id %}">Edit</a>
+        <a href="{% url 'delete_task' task.id %}">Delete</a>
+        {% empty %}
+        <p>No tasks were created.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Add task</a>
+{% endblock %}
